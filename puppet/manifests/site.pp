@@ -12,4 +12,4 @@ File {
   mode  => '0644'
 }
 
-include baseconfig, apache, apache_vhosts
+include baseconfig, apache, apache_vhosts, php
