@@ -8,14 +8,21 @@ FILE_PATH = "./"
 HOSTNAME  = "mydebianbox"
 DOMAIN    = "awesome.dev"
 BOX       = "chef/debian-7.4"
-RAM       = "256"
 IP        = "192.168.56.100"
+
+CPUS = 2
+RAM  = 256
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = BOX
   config.vm.host_name = HOSTNAME + "." + DOMAIN
   config.vm.network "private_network", ip: IP
+
+  config.vm.provider "virtualbox" do |v|
+    v.memory = RAM
+    v.cpus = CPUS
+  end
 
   config.vm.synced_folder FILE_PATH, "/var/www"
 
