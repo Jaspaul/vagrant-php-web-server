@@ -36,4 +36,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.module_path = 'puppet/modules'
   end
 
+  config.vm.provision :shell do |shell|
+    shell.inline = 'php -r "readfile(\'https://getcomposer.org/installer\');" | php'
+  end
+
 end
