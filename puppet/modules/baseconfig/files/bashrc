@@ -1,1 +1,1 @@
-alias composer='php composer.phar'
+alias composer='php ~/composer.phar'
