@@ -1,24 +1,24 @@
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
-    ServerName static-site
+    ServerName site
 
-    DocumentRoot /var/www/static-site
+    DocumentRoot /var/www/site
     <Directory />
         Options FollowSymLinks
         AllowOverride None
     </Directory>
-        <Directory /var/www/static-site>
+        <Directory /var/www/site>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride None
         Order allow,deny
         allow from all
     </Directory>
 
-    ErrorLog ${APACHE_LOG_DIR}/static-site-error.log
+    ErrorLog ${APACHE_LOG_DIR}/site-error.log
 
     # Possible values include: debug, info, notice, warn, error, crit,
     # alert, emerg.
     LogLevel warn
 
-    CustomLog ${APACHE_LOG_DIR}/static-site-access.log combined
+    CustomLog ${APACHE_LOG_DIR}/site-access.log combined
 </VirtualHost>

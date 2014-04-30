@@ -4,7 +4,7 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-FILE_PATH = "./"
+FILE_PATH = "./site"
 HOSTNAME  = "mydebianbox"
 DOMAIN    = "awesome.dev"
 BOX       = "chef/debian-7.4"
@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.cpus = CPUS
   end
 
-  config.vm.synced_folder FILE_PATH, "/var/www"
+  config.vm.synced_folder FILE_PATH, "/var/www/site"
 
   config.vm.provision :shell do |shell|
     shell.inline = 'apt-get update && apt-get -q -y install puppet-common'
